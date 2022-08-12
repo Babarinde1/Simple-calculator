@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Supherhero">
+    <meta name="keywords" content="programming hero,learn programming">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!--custom css-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="w3-container w3-padding w3-card-4">
+<h2> My simple calculator</h2>
+<div id="total" class="w3-container w3-light-grey w3-padding w3-border" style="height:50px"></div><br>
+<input type="text"id="one"  class="w3-input w3-white w3-border w3-card" placeholder="enter first no.." value=''/><br>
+<input type="text"id="two"  class="w3-input w3-white w3-border w3-card" placeholder="enter second no.." value=''/>
+<br>
+<button id="addition" value="+"class="w3-button w3-black w3-xlarge w3-hover-black w3-black w3-ripple">+</button>
+<button id="sub" class="w3-button w3-black w3-xlarge w3-hover-black w3-ripple">-</button>
+<button id="mlt" class="w3-button w3-black w3-xlarge hover-black w3-ripple">*</button>
+<button id="div" class="w3-button w3-black w3-hover-black w3-xlarge w3-ripple">/</button>
+<button id="rem" class="w3-button w3-black w3-hover-black w3-xlarge w3-ripple">%</button>
+<button id="pow" class="w3-button w3- black w3-hover-black w3-black w3-xlarge w3-ripple">Pow</button>
+
+<button id="clear" class="w3-button w3-hover-red w3-red w3-xlarge w3-margin w3-ripple" >Clear</button>
+
+<br>
+<hr>
+
+
+</div>
+
+
+
+
+<script> 
+//display
+let screen = document.getElementById("total");
+//first input
+let oneBtn = document.getElementById("one");
+//second input
+ let twoBtn = document.getElementById("two");
+ //operators button
+ let additionBtn = document.getElementById("addition");
+ 
+  let subBtn = document.getElementById("sub");
+  
+ let divBtn = document.getElementById("div");
+   
+   let powBtn = document.getElementById("pow");
+   
+  let mltBtn = document.getElementById("mlt"); 
+  
+   let remBtn = document.getElementById("rem"); 
+ //clear button
+let clearBtn = document.getElementById("clear")
+//functions
+ 
+
+oneBtn.addEventListener("click",getOne);
+ function getOne(){
+ screen.innerHTML += oneBtn.value; 
+ };
+ 
+ twoBtn.addEventListener("click",getTwo);
+ function getTwo(){
+  screen.innerHTML += twoBtn.value;  
+ };
+//addition function 
+additionBtn.addEventListener("click",sum) 
+function sum(){ 
+if(oneBtn.value == "" ||twoBtn.value == ""){
+    result = "Error...";
+    
+}
+else{
+    result = parseFloat(oneBtn.value) + parseFloat(twoBtn.value);
+} 
+screen.innerHTML  = result;
+};
+//subtraction function 
+subBtn.addEventListener("click",dif) 
+function dif(){ 
+if(oneBtn.value == "" ||twoBtn.value == ""){
+    result = "Error...";
+    
+}
+else{
+    result = parseFloat(oneBtn.value) - parseFloat(twoBtn.value);
+} 
+screen.innerHTML  = result;
+};
+// multplication function 
+mltBtn.addEventListener("click",mult) 
+function mult(){ 
+if(oneBtn.value == "" ||twoBtn.value == ""){
+    result = "Error...";
+    
+}
+else{
+    result = parseFloat(oneBtn.value) * parseFloat(twoBtn.value);
+} 
+screen.innerHTML  = result;
+};
+//division function
+divBtn.addEventListener("click",div) 
+function div(){ 
+if(oneBtn.value == "" ||twoBtn.value == ""){
+    result = "Error...";
+    
+}
+else{
+    result = parseFloat(oneBtn.value) / parseFloat(twoBtn.value);
+} 
+screen.innerHTML  = result;
+};
+//modulus function
+remBtn.addEventListener("click",rem) 
+function rem(){ 
+if(oneBtn.value == "" ||twoBtn.value == ""){
+    result = "Error...";
+    
+}
+else{
+    result = parseFloat(oneBtn.value) % parseFloat(twoBtn.value);
+} 
+screen.innerHTML  = result;
+};
+//power function 
+
+powBtn.addEventListener("click",pwr) 
+function pwr(){ 
+if(oneBtn.value == "" ||twoBtn.value == ""){
+    result = "Error...";
+    
+}
+else{
+    result = parseFloat(oneBtn.value) ** parseFloat(twoBtn.value);
+} 
+screen.innerHTML  = result;
+};
+//clear function 
+clearBtn.addEventListener("click",clear)
+function clear(){
+  screen.innerHTML= "";
+  oneBtn.value = "";
+  twoBtn.value = "";
+}
+
+</script>
+</body>
+</html>
+
+
